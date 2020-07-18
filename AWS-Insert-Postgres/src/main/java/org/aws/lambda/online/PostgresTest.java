@@ -54,9 +54,9 @@ public class PostgresTest implements RequestHandler<RequestDetails, ResponseDeta
 	}
 
 	private Connection getConection() throws SQLException {
-		String url = "jdbc:postgresql://conectainstancia.cbcskmsytoea.us-east-1.rds.amazonaws.com:5432/ConectaDB";
-		String username = "AdminConecta";
-		String password = "*abc*123";
+		String url = "jdbc:postgresql://caminho do seu banco:5432/NomeDoSeuBanco";
+		String username = "UsuarioDoSeuBanco";
+		String password = "senhaDoSeuBanco";
 		Connection conn = DriverManager.getConnection(url, username, password);
 		return conn;
 
