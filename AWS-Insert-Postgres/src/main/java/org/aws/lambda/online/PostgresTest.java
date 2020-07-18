@@ -28,7 +28,7 @@ public class PostgresTest implements RequestHandler<RequestDetails, ResponseDeta
 	private void insertDetails(RequestDetails requestDetails, ResponseDetails responseDetails) throws SQLException {
 		Connection connection = getConection();
 		Statement statement = connection.createStatement();
-		String query = getquery(requestDetails);
+		String query = getQuery(requestDetails);
 		int responseCode = statement.executeUpdate(query);
 		if (1 == responseCode) {
 			responseDetails.setMessageID(String.valueOf(responseCode));
@@ -36,7 +36,7 @@ public class PostgresTest implements RequestHandler<RequestDetails, ResponseDeta
 		}
 	}
 
-	private String getquery(RequestDetails requestDetails) {
+	private String getQuery(RequestDetails requestDetails) {
 
 		String query = "INSERT INTO public.LIDERES_DE_RUA (id, nome, logradouro, numero, cep, telefone, email, data_nascimento, "
 				+ "rg, cpf, agente_comunitario_de_saude, observacoes, status) VALUES(";
